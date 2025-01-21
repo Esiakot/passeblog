@@ -1,3 +1,5 @@
+/* tout le style */
+
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +13,8 @@ body {
   background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(29,1,94,1) 100%);
 }
 
+/* Page index avec les articles */
+
 header {
   display: flex;
   justify-content: space-around;
@@ -20,6 +24,8 @@ header {
   background-color: #101010;
   color: aliceblue;
 }
+
+/* barre de navigation */
 
 nav {
   display: flex;
@@ -103,3 +109,6 @@ a:hover {
   font-size: 1rem;
   color: #333;
 }
+
+/* page connexions */
+
