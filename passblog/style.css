@@ -64,7 +64,6 @@ a {
 
 a:hover {
   color: blueviolet;
-  transform: scale(1.5);
 }
 
 .article-container {
@@ -112,3 +111,53 @@ a:hover {
 
 /* page connexions */
 
+
+/* Style du menu déroulant */
+
+/* Fix pour éviter que les sous-menus héritent de display:flex */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav > ul {
+  display: flex; /* Appliqué uniquement aux menus principaux */
+  align-items: center;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none; /* Masquer par défaut */
+  flex-direction: column; /* Empêche l'héritage de display: flex */
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex; /* Afficher en tant que colonne */
+}
+
+.dropdown-menu li {
+  margin: 0;
+  width: 150px;
+}
+
+.dropdown-menu li a {
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #ddd;
+}
