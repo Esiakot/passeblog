@@ -1,0 +1,237 @@
+/* tout le style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: rgb(25,99,34);
+  background: -moz-linear-gradient(0deg, rgba(25,99,34,1) 0%, rgba(12,81,129,1) 30%, rgba(37,21,58,1) 57%, rgba(16,16,16,1) 74%);
+  background: -webkit-linear-gradient(0deg, rgba(25,99,34,1) 0%, rgba(12,81,129,1) 30%, rgba(37,21,58,1) 57%, rgba(16,16,16,1) 74%);
+  background: linear-gradient(0deg, rgba(25,99,34,1) 0%, rgba(12,81,129,1) 30%, rgba(37,21,58,1) 57%, rgba(16,16,16,1) 74%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#196322",endColorstr="#101010",GradientType=1);
+}
+
+/* Particules en arrière-plan */
+#particles-js {
+  position: fixed; /* Fixe les particules en arrière-plan */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Place les particules derrière tout */
+  background: transparent; /* Pas de fond pour les particules */
+  pointer-events: none; /* Linteraction */
+}
+
+.content {
+  position: relative; /* Contient les articles au-dessus des particules */
+  z-index: 1;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 3px solid #101010;
+  height: 60px;
+  background-color: #101010;
+  color: aliceblue;
+}
+
+/* barre de navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#animatedImage {
+  transition: transform 0.1s ease; /* Fluidité de l'animation */
+}
+
+.left img {
+  /* Vos styles ici */
+  width: 45px; /* Exemple de largeur */
+  height: auto; /* Maintient le ratio d'aspect */
+  padding-left: 10px; /* Espacement à droite */
+  padding-top: 10px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+ul.center {
+  justify-content: center;
+  flex-grow: 1;
+}
+
+ul.right, ul.left {
+  justify-content: flex-end;
+}
+
+ul.left {
+  text-transform: uppercase;
+}
+
+li {
+  margin: 0 15px;
+}
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+
+}
+
+a:hover {
+  color: blueviolet;
+}
+
+/* articles */
+.article-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+/* Articles avec plus de transparence et flou */
+.article {
+  background-color: rgba(255, 255, 255, 0); /* Fond complètement transparent */
+  backdrop-filter: blur(5px); /* Flou sur les particules visibles à travers */
+  -webkit-backdrop-filter: blur(15px); /* Compatibilité WebKit */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure légère pour délimiter */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  transition: transform 0.2s ease-in-out; /* Animation au survol */
+  height: 310px;
+}
+
+.article:hover {
+  transform: translateY(-5px) scale(1.03); /* Légère mise en avant au survol */
+}
+
+.article img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.article h3 {
+  padding: 15px;
+  font-size: 1.2rem;
+  background-color: #101010;
+  color: aliceblue;
+  text-align: center;
+}
+
+.article p {
+  padding: 15px;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+
+/* Style du menu déroulant */
+/* Fix pour éviter que les sous-menus héritent de display:flex */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav > ul {
+  display: flex; /* Appliqué uniquement aux menus principaux */
+  align-items: center;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none; /* Masquer par défaut */
+  flex-direction: column; /* Empêche l'héritage de display: flex */
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex; /* Afficher en tant que colonne */
+}
+
+.dropdown-menu li {
+  margin: 0;
+  width: 150px;
+}
+
+.dropdown-menu li a {
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #ddd;
+}
+
+
+/* Page à propos */
+/* Section À propos */
+.about {
+  background-color: #f4f4f4;
+  padding: 40px 20px;
+}
+
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #101010;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+
+body.a-propos-page {
+  background: #f4f4f4;  /* Un fond différent pour la page À propos */
+  color: black;       /* Une couleur de texte différente, par exemple */
+}
